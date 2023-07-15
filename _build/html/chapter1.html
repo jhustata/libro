@@ -161,7 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter5.html"># Session 6: R, Python, &amp; AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hub.html">Hub</a></li>
 </ul>
 
     </div>
@@ -359,7 +360,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="session-1-oneway">
 <h1>Session 1: Oneway<a class="headerlink" href="#session-1-oneway" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -375,7 +381,7 @@ document.write(`
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># Extract relevant columns</span>
-<span class="n">bmi</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 
 <span class="c1"># Calculate mean and standard deviation</span>
@@ -411,19 +417,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># Extract relevant columns</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">bmi</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># Calculate mean and standard deviation</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">mean_age</span> <span class="o">=</span> <span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;age&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/e6c4012b35feedf1e9abed5a6f3b4e20c0305c6129e95427608b3ac1cf226128.png" src="_images/e6c4012b35feedf1e9abed5a6f3b4e20c0305c6129e95427608b3ac1cf226128.png" />
 </div>
 </div>
 </section>
