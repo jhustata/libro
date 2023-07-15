@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preface &#8212; Stata Programming</title>
+    <title>Session 2: Twoway &#8212; Stata Programming</title>
   
   
   
@@ -61,10 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Session 1: Oneway" href="chapter1.html" />
+    <link rel="next" title="Session 3: Multivariable" href="chapter3.html" />
+    <link rel="prev" title="Session 1: Oneway" href="chapter1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,15 +150,15 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Preface
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapter1.html">Session 1: Oneway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Session 2: Twoway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html"># Session 6: R, Python, &amp; AI</a></li>
@@ -232,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -262,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/chapter2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -342,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preface</h1>
+    <h1>Session 2: Twoway</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,28 +357,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preface">
-<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this heading">#</a></h1>
-<p>This book has been designed to cater to students with low, moderate, or advanced skill-levels without overwhelming or boring those in the tails of this beautiful spectrum.</p>
-<p>Since the book also aims to keep each student sufficiently engaged from the first week through to the end, you should expect to find pacesetters along your journey, letting you keep on target with your goals.</p>
-<p>In the spirit of openness, the book will also lay out a rubric that lets you know how you’ll be graded in each week.</p>
-<p>Expect to feel anxious, bored, or <a class="reference external" href="https://muzaale.github.io/book/bilowozo.html#iterate">in flow</a> at some point. Flow is a psychological state characterized by optimal engagement and enjoyment, representing the relationship between skill levels and challenge levels.</p>
-<p>Our goal is to start off with low challenge levels and gradually increase these levels each week. At each challenge level there’ll be material tailored to those with low skill-, moderate skill-, and high skill levels.</p>
-<p>You’ll find that we sufficiently equip you with the tools that help you develop your skills to the next level each passing week.</p>
-<p>Feedback systems are the only means by which we may hope to keep on track with your very unique needs. And so we’ll ask you to submit your responses to a weekly task by 11:59PM on Mondays.</p>
-<p>Although this is not a statistics class, some very basic idea regarding summary estimates such as mean, standard deviation, or percentile are expected.</p>
-<p>ChatGPT or any AI will exponentiate the rate at which you learn, solve problems, and meet challenges including timely submission of homeworks.</p>
-<p>But we’ll still hold office hours to maintain the human touch in-person, via-zoom, or by a hybrid arrangement.</p>
-<p>Please use this books <a class="reference internal" href="hub.html"><span class="doc std std-doc">Hub</span></a> to find the resources you’ll need during your journey through Stata Programming at JHU.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Session 1: Oneway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter5.html"># Session 6: R, Python, &amp; AI</a></li>
-</ul>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="session-2-twoway">
+<h1>Session 2: Twoway<a class="headerlink" href="#session-2-twoway" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -411,12 +392,21 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="chapter1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 1: Oneway</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Session 1: Oneway</p>
+        <p class="prev-next-title">Session 3: Multivariable</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

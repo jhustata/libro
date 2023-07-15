@@ -1,0 +1,81 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/d/Library/Python/3.11/lib/python/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import requests
+import io 
+
+# Load the data from the URL using requests
+url = 'https://raw.githubusercontent.com/jhustata/livre/main/transplants.txt'
+response = requests.get(url)
+content = response.content.decode('utf-8')
+file = io.StringIO(content)
+data = pd.read_csv(file, sep='\t')
+
+# Extract relevant columns
+bmi = data['age']
+x = [1] * len(age)
+
+# Calculate mean and standard deviation
+mean_age = age.mean()
+std_age = age.std()
+
+# Calculate upper and lower bounds for 95% confidence interval
+ub = mean_age + std_age * 1.96
+lb = mean_age - std_age * 1.96
+
+# Add jitter to x-axis values
+x_jitter = x + np.random.normal(0, 0.02, size=len(x))
+
+# Scatter plot of age with increased jitter
+plt.scatter(x_jitter, age, c='lime', alpha=0.5)
+
+# Mean point
+plt.scatter(1, mean_age, c='blue', s=25)
+
+# Confidence interval with thicker line
+plt.errorbar(1, mean_age, yerr=[[mean_age - lb], [ub - mean_age]], color='orange', linewidth=2)
+
+# Styling
+plt.ylabel('Realism, %')
+plt.title('Mean & 95% CI')
+plt.text(1.01, mean_age, r'$\beta_0$', va='center', fontsize=24)
+plt.xticks([])
+plt.grid(True)
+
+# Save the figure
+plt.savefig('age_m_95ci.png')
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 16[0m
+[1;32m     14[0m [38;5;66;03m# Extract relevant columns[39;00m
+[1;32m     15[0m bmi [38;5;241m=[39m data[[38;5;124m'[39m[38;5;124mage[39m[38;5;124m'[39m]
+[0;32m---> 16[0m x [38;5;241m=[39m [[38;5;241m1[39m] [38;5;241m*[39m [38;5;28mlen[39m([43mage[49m)
+[1;32m     18[0m [38;5;66;03m# Calculate mean and standard deviation[39;00m
+[1;32m     19[0m mean_age [38;5;241m=[39m age[38;5;241m.[39mmean()
+
+[0;31mNameError[0m: name 'age' is not defined
+
