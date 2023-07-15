@@ -6,17 +6,17 @@ Since the book also aims to keep each student sufficiently engaged from the firs
 
 In the spirit of openness, the book will lay out a grading rubric so that there are no surprises along the way.
 
-Expect to feel anxious, bored, or [flow](flow.ipynb) at some point. Flow is a psychological state of `being in the zone`, characterized by optimal engagement and enjoyment. It is when your skill level is well matched to the challenges you face.
+Expect to feel anxious, bored, or [flow](j001flow.ipynb) at some point. Flow is a psychological state of `being in the zone`, characterized by optimal engagement and enjoyment. It is when your skill level is well matched to the challenges you face.
 
 Our goal is to start off with low challenge levels and gradually increase these each week. At each challenge level there'll be material tailored to those with low skill-, moderate skill-, and high skill levels.
 
 You'll find that we sufficiently equip you with the tools that enable you to remain `in the zone` throughout this class.
 
-Feedback systems are the only means by which we may hope to achieve this. And so we'll ask you to submit your responses to a weekly tasks by 11:59PM on Mondays.
+Feedback systems are the only means by which we may hope to achieve this. And so we'll ask you to submit your responses to weekly tasks by 11:59PM on Mondays.
 
 Although this is not a statistics class, some very basic idea regarding summary estimates such as mean, standard deviation, or percentile are expected.
 
-Notice that the sessions are organized around concepts applicable to Stata Programming but as well as to Python, R, SAS, SPSS, or any other statistical computing language. It is in the class [Hub](hub.ipynb) that topics are organized in a technical way that is very specific to Stata or to this class. 
+Notice that the sessions are organized around concepts applicable to Stata Programming but as well as to Python, R, SAS, SPSS, or any other statistical computing language. By contrast, the class [Hub](j002hub.ipynb) has topics organized in a technical way pecific to Stata or to this class. 
 
 ChatGPT or any AI will exponentiate the rate at which you learn, solve problems, and meet challenges including timely submission of your homework assignments.
 
@@ -24,7 +24,7 @@ But we'll still hold office hours to maintain the human touch in-person, via-zoo
 
 Looking forward to meeting you, guiding you, learning from you, and forging away at Stata Programming with you!
 
-Your [teaching team](team.ipynb)    
+Your [teaching team](j003team.ipynb)    
 East Baltimore    
 Spring 2024    
 
