@@ -162,9 +162,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Application &amp; Case Studies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducible Research &amp; Report Writing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Review and Exam Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducibilty &amp; Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Coda</a></li>
 </ul>
 
     </div>
@@ -362,7 +362,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="session-2-twoway">
 <h1>Session 2: Twoway<a class="headerlink" href="#session-2-twoway" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -371,7 +376,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">io</span> 
+<span class="kn">import</span> <span class="nn">io</span>
 
 <span class="c1"># Load the data from the URL using requests</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jhustata/livre/main/transplants.txt&#39;</span>
@@ -385,7 +390,7 @@ document.write(`
 <span class="n">weight</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;don_wgt_kg&#39;</span><span class="p">]</span>
 
 <span class="c1"># Run a simple linear regression to get the parameters</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="c1"># adding a constant (intercept term) to the model</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c1"># adding a constant (intercept term) to the model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">beta0</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">beta1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -395,19 +400,29 @@ document.write(`
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 
+<span class="c1"># Calculate the predicted weight at age 40</span>
+<span class="n">age_40</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">weight_40</span> <span class="o">=</span> <span class="n">beta0</span> <span class="o">+</span> <span class="n">beta1</span> <span class="o">*</span> <span class="n">age_40</span>
+
+<span class="c1"># Calculate the upper and lower bounds of the error bar</span>
+<span class="n">error</span> <span class="o">=</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">rmse</span>
+
 <span class="c1"># Create a figure and axis</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="c1"># Generate a scatter plot</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="c1"># Generate a regression line</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># Add the error bar</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">age_40</span><span class="p">,</span> <span class="n">weight_40</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Error Bar&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Adding text for beta0, beta1, error term, and RMSE</span>
 <span class="n">formula</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Weight = </span><span class="si">{</span><span class="n">beta0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">beta1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">*Age + $</span><span class="se">\\</span><span class="s1">epsilon_i$&#39;</span>
-<span class="n">params</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">beta_0$: </span><span class="si">{</span><span class="n">beta0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$</span><span class="se">\\</span><span class="s1">beta_1$: </span><span class="si">{</span><span class="n">beta1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$</span><span class="se">\\</span><span class="s1">epsilon_i$: error term</span><span class="se">\n</span><span class="s1">RMSE: ±</span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">formula</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">params</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">beta_0$: </span><span class="si">{</span><span class="n">beta0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$</span><span class="se">\\</span><span class="s1">beta_1$: </span><span class="si">{</span><span class="n">beta1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$</span><span class="se">\\</span><span class="s1">epsilon_i$: error term</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="n">formula</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">params</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
 
 <span class="c1"># Styling</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age vs Weight Scatter Plot with Regression Line&#39;</span><span class="p">)</span>
@@ -420,8 +435,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/d49834641213abc78bb5b6094f778ab798aa3555ee869ca2a48ea7c46bc9d40f.png" src="_images/d49834641213abc78bb5b6094f778ab798aa3555ee869ca2a48ea7c46bc9d40f.png" />
+<img alt="_images/6402b23333ec185eef918333ad2869dd600f83a3a06ef94bca4e66cd2a2abdef.png" src="_images/6402b23333ec185eef918333ad2869dd600f83a3a06ef94bca4e66cd2a2abdef.png" />
 </div>
 </div>
 </section>
