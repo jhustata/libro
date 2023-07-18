@@ -163,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Case Study</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducibilty &amp; Writing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Coda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Report Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Wrap-up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="j002hub.html">Hub 🦀</a></li>
 </ul>
 
@@ -401,16 +401,14 @@ document.write(`
 <span class="c1"># Scatter plot of weight with increased jitter</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_jitter</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-
 <span class="c1"># Confidence interval with thicker line</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mean_weight</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="p">[[</span><span class="n">mean_weight</span> <span class="o">-</span> <span class="n">lb</span><span class="p">],</span> <span class="p">[</span><span class="n">ub</span> <span class="o">-</span> <span class="n">mean_weight</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Mean point</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mean_weight</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 
-
 <span class="c1"># Styling</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Weight, kg&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean &amp; 95% CI&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
@@ -423,7 +421,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/b421f4d34e425cdc7e209e4bf15271f4a81669a4d9f490938ee177659213aa30.png" src="_images/b421f4d34e425cdc7e209e4bf15271f4a81669a4d9f490938ee177659213aa30.png" />
+<img alt="_images/4c573cc0844457dac2a811c72d7c949fc09eac78d947eaab5528f0e34e7a71f1.png" src="_images/4c573cc0844457dac2a811c72d7c949fc09eac78d947eaab5528f0e34e7a71f1.png" />
 </div>
 </div>
 <p>The scatter plot visualizes the distribution of the ‘weight’ variable in the dataset. Each point corresponds to one data entry. The blue dot represents the mean weight value. The orange lines above and below the mean represent the 95% confidence interval for the mean weight. This means that we are 95% confident that the true mean weight lies within this interval.</p>
