@@ -162,7 +162,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hub.html">Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Application &amp; Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducible Research &amp; Report Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Review and Exam Preparation</a></li>
 </ul>
 
     </div>
@@ -393,7 +395,11 @@ document.write(`
 <span class="n">lb</span> <span class="o">=</span> <span class="n">mean_age</span> <span class="o">-</span> <span class="n">std_age</span> <span class="o">*</span> <span class="mf">1.96</span>
 
 <span class="c1"># Add jitter to x-axis values</span>
-<span class="n">x_jitter</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="c1">#x_jitter = x + np.random.normal(0, 0.02, size=len(x))</span>
+
+<span class="c1"># Add jitter to x-axis values centered around 1</span>
+<span class="n">x_jitter</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+
 
 <span class="c1"># Scatter plot of age with increased jitter</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_jitter</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -405,7 +411,7 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mean_age</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="p">[[</span><span class="n">mean_age</span> <span class="o">-</span> <span class="n">lb</span><span class="p">],</span> <span class="p">[</span><span class="n">ub</span> <span class="o">-</span> <span class="n">mean_age</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Styling</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Realism, %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Age, years&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean &amp; 95% CI&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="n">mean_age</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\beta_0$&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
@@ -419,9 +425,19 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/7a2c644bb71a19957a10cb55670efc5942e1b058f1c41cb3af3f90df766f04aa.png" src="_images/7a2c644bb71a19957a10cb55670efc5942e1b058f1c41cb3af3f90df766f04aa.png" />
+<img alt="_images/6dbc3e19b2e670fa1a2aaca2c7846afb2ae1e715bf27268be4521923cf08d785.png" src="_images/6dbc3e19b2e670fa1a2aaca2c7846afb2ae1e715bf27268be4521923cf08d785.png" />
 </div>
 </div>
+<ol class="arabic simple">
+<li><p><strong>Output Explanation:</strong> You could add the explanation in Python comments or in a Markdown cell (if you’re using Jupyter notebooks):</p></li>
+</ol>
+<p>The scatter plot visualizes the distribution of the ‘age’ variable in the dataset. Each point corresponds to one data entry. The blue dot represents the mean age value. The orange lines above and below the mean represent the 95% confidence interval for the mean age. This means that we are 95% confident that the true mean age lies within this interval.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Hands-On Exercises:</strong> Here are some exercises to help you master the concepts introduced:</p></li>
+</ol>
+<p>Exercise 1: Try using a different dataset and apply the same analysis. What differences do you notice in the distribution and the mean?</p>
+<p>Exercise 2: Experiment with different levels of jitter. How does changing the jitter affect the visualization?</p>
+<p>Exercise 3: Calculate the confidence interval at a different confidence level, such as 90% or 99%. How does this change the interval?</p>
 </section>
 
     <script type="text/x-thebe-config">

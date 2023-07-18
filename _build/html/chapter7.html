@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preface &#8212; Stata Programming</title>
+    <title>Session 7: Reproducible Research &amp; Report Writing &#8212; Stata Programming</title>
   
   
   
@@ -61,10 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Session 1: Oneway" href="chapter1.html" />
+    <link rel="next" title="Session 8: Review and Exam Preparation" href="chapter8.html" />
+    <link rel="prev" title="Session 6: Application &amp; Case Studies" href="chapter6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,20 +150,20 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Preface
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapter1.html">Session 1: Oneway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Application &amp; Case Studies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducible Research &amp; Report Writing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Session 7: Reproducible Research &amp; Report Writing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Review and Exam Preparation</a></li>
 </ul>
 
@@ -235,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/chapter7.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -334,9 +335,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -347,21 +346,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preface</h1>
+    <h1>Session 7: Reproducible Research & Report Writing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preface</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -371,37 +360,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preface">
-<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this heading">#</a></h1>
-<p>This book has been designed to cater to students with a spectrum of skill levels - low, moderate, or advanced - ensuring that no one feels overwhelmed or under-stimulated.</p>
-<p>Your journey through this book will be paced with milestones – “pacesetters” – to help you stay on track with your learning objectives.</p>
-<p>We believe in transparency, which is why we’re providing a grading rubric from the get-go. This tool lets you understand how you’ll be assessed and eliminates any surprises.</p>
-<p>Learning is an emotional journey. You might experience moments of anxiety, boredom, or – ideally – a state known as “flow”. <a class="reference internal" href="j001flow.html"><span class="doc std std-doc">Flow</span></a> is a psychological concept describing a state of optimal engagement and enjoyment that occurs when your skill level and the challenges you face are well balanced.</p>
-<p>Our goal is to begin with low challenge levels and increase these gradually each week. We’ll provide material suited to different skill levels at each challenge level, equipping you with the tools to stay in the “flow” zone.</p>
-<p>The best way we can achieve this is through regular feedback. To that end, we ask that you submit your responses to weekly tasks by 11:59PM every Monday.</p>
-<p>Prerequisites: This isn’t a statistics class, but some basic understanding of summary estimates like mean, standard deviation, and percentile will be helpful.</p>
-<p>While the sessions revolve around concepts applicable to Stata Programming, the knowledge you gain here can also be applied to Python, R, SAS, SPSS, or other statistical computing languages. However, the class <a class="reference internal" href="j002hub.html"><span class="doc std std-doc">Hub’s</span></a> topics are organized technically, specific to Stata or this class.</p>
-<p>Artificial Intelligence (AI), like ChatGPT, will be an important tool to boost your learning speed, problem-solving ability, and to assist with challenges, including timely homework submissions.</p>
-<p>Rest assured, we’ll continue to hold office hours, both in-person and via Zoom, to provide the human touch and support your learning journey.</p>
-<p>We look forward to meeting you, guiding you, learning from you, and exploring Stata Programming together!</p>
-<p>Your <a class="reference internal" href="j003team.html"><span class="doc std std-doc">teaching team</span></a>,<br />
-East Baltimore<br />
-Spring 2024</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
-<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Session 1: Oneway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Session 3: Multivariable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Application &amp; Case Studies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducible Research &amp; Report Writing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Review and Exam Preparation</a></li>
-</ul>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="session-7-reproducible-research-report-writing">
+<h1>Session 7: Reproducible Research &amp; Report Writing<a class="headerlink" href="#session-7-reproducible-research-report-writing" title="Permalink to this heading">#</a></h1>
+<p>Reproducibility is a fundamental aspect of good research. In this week, students can learn about creating reproducible research workflows in Stata. This may include topics like data management, creating dynamic documents using Stata’s dyndoc command, incorporating Stata output into LaTeX or Markdown documents for report writing etc.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,12 +396,21 @@ Spring 2024</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Session 6: Application &amp; Case Studies</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="chapter1.html"
+       href="chapter8.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Session 1: Oneway</p>
+        <p class="prev-next-title">Session 8: Review and Exam Preparation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -453,22 +423,6 @@ Spring 2024</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preface</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

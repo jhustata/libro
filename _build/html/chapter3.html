@@ -161,7 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chapter2.html">Session 2: Twoway</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Session 3: Multivariable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Session 4: Hierarchical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter5.html"># Session 6: R, Python, &amp; AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Session 5: AI, Python, &amp; R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Session 6: Application &amp; Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Session 7: Reproducible Research &amp; Report Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Session 8: Review and Exam Preparation</a></li>
 </ul>
 
     </div>
@@ -360,6 +363,80 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="session-3-multivariable">
 <h1>Session 3: Multivariable<a class="headerlink" href="#session-3-multivariable" title="Permalink to this heading">#</a></h1>
 <p>I’m not aware of any non-parametric approach suited for this task. And therefore, we are going to employ parametric or semi-parametric methods for this chapter.</p>
+<p>Multivariable analysis typically involves working with multiple independent variables to understand their impact on a dependent variable. Often, we use parametric methods for this analysis as they provide a useful framework when the assumptions of these methods are met. However, in cases where the assumptions of parametric methods are not met, semi-parametric methods can be helpful. Unfortunately, non-parametric methods are not well-suited for multivariable analysis due to their limitations in handling multiple independent variables. In this chapter, we’ll focus on parametric and semi-parametric methods, exploring how they can be used in Stata</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">io</span> 
+
+<span class="c1"># Load the data from the URL using requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jhustata/livre/main/transplants.txt&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">age</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+
+<span class="c1"># Assuming &#39;weight&#39; is another column in your dataset</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;don_wgt_kg&#39;</span><span class="p">]</span>
+
+<span class="c1"># Assuming there are more relevant numerical columns, </span>
+<span class="c1"># subset the dataframe</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;don_hgt_cm&#39;</span><span class="p">,</span> <span class="s1">&#39;don_wgt_kg&#39;</span><span class="p">,</span> <span class="s1">&#39;dx&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Generate a pairplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pairplot.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
+<img alt="_images/dae00d33ba0a3c54e27a986e7277a9a32d495de2831b9fd9606423a68f95aade.png" src="_images/dae00d33ba0a3c54e27a986e7277a9a32d495de2831b9fd9606423a68f95aade.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="c1"># Run multiple linear regression</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;don_wgt_kg ~ age + don_hgt_cm + dx&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Predict values</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;predicted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;don_hgt_cm&#39;</span><span class="p">,</span> <span class="s1">&#39;dx&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Create a scatter plot of age vs weight</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;don_wgt_kg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add the regression line</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;predicted&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1"># Styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age vs Weight Scatter Plot with Adjusted Regression Line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age, years&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Weight, kg&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;age_weight_regline.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6297e1d854e12e672838007eb0cb982c75124b1cd3581c6a84a0604d1038098a.png" src="_images/6297e1d854e12e672838007eb0cb982c75124b1cd3581c6a84a0604d1038098a.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

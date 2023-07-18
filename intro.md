@@ -1,32 +1,35 @@
 # Preface
 
-This book has been designed to cater to students with low, moderate, or advanced skill-levels without overwhelming or boring those in the tails of this beautiful spectrum. 
+This book has been designed to cater to students with a spectrum of skill levels - low, moderate, or advanced - ensuring that no one feels overwhelmed or under-stimulated.  
 
-Since the book also aims to keep each student sufficiently engaged from the first week through to the end, you should expect to find pacesetters along your journey, letting you keep on target with your goals.
+Your journey through this book will be paced with milestones – “pacesetters” – to help you stay on track with your learning objectives.  
 
-In the spirit of openness, the book will lay out a grading rubric so that there are no surprises along the way.
+We believe in transparency, which is why we're providing a grading rubric from the get-go. This tool lets you understand how you'll be assessed and eliminates any surprises.  
 
-Expect to feel anxious, bored, or [flow](j001flow.ipynb) at some point. Flow is a psychological state of `being in the zone`, characterized by optimal engagement and enjoyment. It is when your skill level is well matched to the challenges you face.
+Learning is an emotional journey. You might experience moments of anxiety, boredom, or – ideally – a state known as "flow". [Flow](j001flow.ipynb) is a psychological concept describing a state of optimal engagement and enjoyment that occurs when your skill level and the challenges you face are well balanced.  
 
-Our goal is to start off with low challenge levels and gradually increase these each week. At each challenge level there'll be material tailored to those with low skill-, moderate skill-, and high skill levels.
+Our goal is to begin with low challenge levels and increase these gradually each week. We'll provide material suited to different skill levels at each challenge level, equipping you with the tools to stay in the "flow" zone.  
 
-You'll find that we sufficiently equip you with the tools that enable you to remain `in the zone` throughout this class.
+The best way we can achieve this is through regular feedback. To that end, we ask that you submit your responses to weekly tasks by 11:59PM every Monday.  
 
-Feedback systems are the only means by which we may hope to achieve this. And so we'll ask you to submit your responses to weekly tasks by 11:59PM on Mondays.
+Prerequisites: This isn't a statistics class, but some basic understanding of summary estimates like mean, standard deviation, and percentile will be helpful.  
 
-Although this is not a statistics class, some very basic idea regarding summary estimates such as mean, standard deviation, or percentile are expected.
+While the sessions revolve around concepts applicable to Stata Programming, the knowledge you gain here can also be applied to Python, R, SAS, SPSS, or other statistical computing languages. However, the class [Hub's](j002hub.ipynb) topics are organized technically, specific to Stata or this class.  
 
-Notice that the sessions are organized around concepts applicable to Stata Programming but as well as to Python, R, SAS, SPSS, or any other statistical computing language. By contrast, the class [Hub](j002hub.ipynb) has topics organized in a technical way pecific to Stata or to this class. 
+Artificial Intelligence (AI), like ChatGPT, will be an important tool to boost your learning speed, problem-solving ability, and to assist with challenges, including timely homework submissions.  
 
-ChatGPT or any AI will exponentiate the rate at which you learn, solve problems, and meet challenges including timely submission of your homework assignments.
+Rest assured, we'll continue to hold office hours, both in-person and via Zoom, to provide the human touch and support your learning journey.  
 
-But we'll still hold office hours to maintain the human touch in-person, via-zoom, or by a hybrid arrangement. 
+We look forward to meeting you, guiding you, learning from you, and exploring Stata Programming together!  
 
-Looking forward to meeting you, guiding you, learning from you, and forging away at Stata Programming with you!
+Your [teaching team](j003team.ipynb),  
+East Baltimore  
+Spring 2024  
 
-Your [teaching team](j003team.ipynb)    
-East Baltimore    
-Spring 2024    
+
+
+
+
 
 # Table of contents
 
