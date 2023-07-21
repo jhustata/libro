@@ -14,7 +14,7 @@ The best way we can achieve this is through regular feedback. To that end, we as
 
 Prerequisites: This isn't a statistics class, but some basic understanding of summary estimates like mean, standard deviation, and percentile will be helpful.  
 
-While the sessions revolve around concepts applicable to Stata Programming, the knowledge you gain here can also be applied to Python, R, SAS, SPSS, or other statistical computing languages. However, the class [Hub's](j002hub.ipynb) topics are organized technically, specific to Stata or this class.  
+While the sessions revolve around [concepts applicable](j004afecdvi.ipynb) to Stata Programming, the knowledge you gain here can also be applied to Python, R, SAS, SPSS, or other statistical computing languages. However, the class [Hub's](j002hub.ipynb) topics are organized technically, specific to Stata or this class.  
 
 Artificial Intelligence (AI), like ChatGPT, will be an important tool to boost your learning speed, problem-solving ability, and to assist with challenges, including timely homework submissions.  
 
